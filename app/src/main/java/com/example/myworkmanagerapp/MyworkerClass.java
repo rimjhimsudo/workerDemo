@@ -54,6 +54,8 @@ public class MyworkerClass extends Worker {
                 .setContentTitle(title)
                 .setContentText(task)
                 .setSmallIcon(R.mipmap.ic_launcher);
+        notificationManager.notify(1, notification.build());
+
 
     }
 }

@@ -18,7 +18,7 @@ public class BootReceiver extends BroadcastReceiver {
         if( intent.getAction() == null || !intent.getAction().equals( "android.intent.action.BOOT_COMPLETED" ) )
             return;
         MyworkerClass.enqueueSelf();
-        Toast.makeText(context,"started",Toast.LENGTH_LONG).show();
+        Toast.makeText(context,"onReceive worked, Hey look at me.",Toast.LENGTH_LONG).show();
         //displayNotification("hello","rimjhim");
 
     }
