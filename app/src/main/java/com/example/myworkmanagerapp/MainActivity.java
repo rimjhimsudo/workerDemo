@@ -16,7 +16,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(MyworkerClass.class).build();
-        WorkManager.getInstance().enqueue(workRequest);
+        /*final OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(MyworkerClass.class).build();
+        WorkManager.getInstance().enqueue(workRequest);*/
+
+        // Schedule WatchDogWorker (after a fresh install we must not rely on the BootCompleteReceiver)
+        MyworkerClass.enqueueSelf();
     }
 }
