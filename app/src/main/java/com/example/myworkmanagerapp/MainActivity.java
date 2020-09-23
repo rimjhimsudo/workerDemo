@@ -3,8 +3,7 @@ package com.example.myworkmanagerapp;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.work.OneTimeWorkRequest;
-import androidx.work.WorkManager;
+
 
 import android.os.Bundle;
 
@@ -20,6 +19,6 @@ public class MainActivity extends AppCompatActivity {
         WorkManager.getInstance().enqueue(workRequest);*/
 
         // Schedule WatchDogWorker (after a fresh install we must not rely on the BootCompleteReceiver)
-        MyworkerClass.enqueueSelf();
+        //MyworkerClass.enqueueSelf();
     }
 }

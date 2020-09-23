@@ -14,12 +14,13 @@ public class BootReceiver extends BroadcastReceiver {
     Context context;
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.d("MYBOOT","working ");
+        Log.d("MYBOOT","working 1 at line17");
         if( intent.getAction() == null || !intent.getAction().equals( "android.intent.action.BOOT_COMPLETED" ) )
             return;
-        MyworkerClass.enqueueSelf();
+        //MyworkerClass.enqueueSelf();
         Toast.makeText(context,"onReceive worked, Hey look at me.",Toast.LENGTH_LONG).show();
-        //displayNotification("hello","rimjhim");
+        displayNotification("hello","rimjhim");
+        Log.d("MYBOOT","working 2  at line23");
 
     }
 
@@ -31,7 +32,7 @@ public class BootReceiver extends BroadcastReceiver {
             notificationManager.createNotificationChannel(channel);
         }
 
-        NotificationCompat.Builder notification = new NotificationCompat.Builder(context.getApplicationContext(), "zeliot123")
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(context, "zeliot123")
                 .setContentTitle(title)
                 .setContentText(task)
                 .setSmallIcon(R.mipmap.ic_launcher);
